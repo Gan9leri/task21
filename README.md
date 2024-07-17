@@ -56,8 +56,25 @@ npm install -g appium
 ```shell
 appium server --base-path /wd/hub
 ```
-### 2. Открыть Appium Inspector, подключиться к эмулятору
-
+### 2. Открыть Appium Inspector
+**Подключить локальное устройство:**   
+Для определения серийного номера устройства
+```shell
+cd C:\Users\{User}\AppData\Local\Android\Sdk\platform-tools
+```
+Затем ввести команду и найти serial_number устройства
+```shell
+adb devices
+```
+В Appium Inspector в теле сессии ввести:
+```shell
+{
+  "platformName": "Android",
+  "appium:automationName": "UiAutomator2",
+  "appium:deviceName": "{serial_number}"
+}
+```
+**Для подключения к эмуляции ввести данные от виртуального устройства**
 - Изучить функционал Appium Inspector, попробовать найти локатор
 
 ### 3. Разработать автотест на getting started (onboarding screen) в приложении википедии - пройти по 4м экранам, на каждом сделать проверку
@@ -69,12 +86,23 @@ appium server --base-path /wd/hub
 
 
 ### Запуск тестов: 
-Для запуска тестов на iPhone использовать команду ниже:
+a) Для запуска тесто по умолчанию используем команду:
 ```shell
-gradlew clean test -Denv=iPhone14ProMax
+gradlew clean test
+```
+в этом случае дефолтное значение deviceHost=browserstack
+
+b) Для запуска тестов на реальном устройстве используем команду:
+```shell
+gradlew clean test -DdeviceHost=real
 ```
 
-Для запуска тестов на Android использовать команду ниже:
+c) Для запуска тестов на виртуальном устройстве используем команду:
 ```shell
-gradlew clean test -Denv=samsungGalaxyS22Ultra
+gradlew clean test -DdeviceHost=emulation
+```
+
+d) Для запуска тестов удаленно на BrowserStack используем команду:
+```shell
+gradlew clean test -DdeviceHost=browserstack
 ```
