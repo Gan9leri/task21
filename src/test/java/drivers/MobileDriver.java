@@ -34,9 +34,9 @@ public class MobileDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        if (config.isDevice().equals("emulate")) {
+        if (config.deviceType().equals("emulate")) {
             return getEmulateDriver();
-        } else if (config.isDevice().equals("real")) {
+        } else if (config.deviceType().equals("real")) {
             return getRealDriver();
         }
         return getBrowserStackDriver();
@@ -116,8 +116,6 @@ public class MobileDriver implements WebDriverProvider {
                 MalformedURLException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
 }

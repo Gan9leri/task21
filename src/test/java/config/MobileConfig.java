@@ -24,5 +24,5 @@ public interface MobileConfig extends Config {
     String appActivity();
     String mobileLanguage();
     String mobileLocale();
-    String isDevice();
+    String deviceType();
 }
