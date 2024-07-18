@@ -94,15 +94,15 @@ gradlew clean test
 
 b) Для запуска тестов на реальном устройстве используем команду:
 ```shell
-gradlew clean test -DdeviceHost=real
+gradle clean test -DdeviceHost=real
 ```
 
 c) Для запуска тестов на виртуальном устройстве используем команду:
 ```shell
-gradlew clean test -DdeviceHost=emulation
+gradle clean test -DdeviceHost=emulation
 ```
 
 d) Для запуска тестов удаленно на BrowserStack используем команду:
 ```shell
-gradlew clean test -DdeviceHost=browserstack
+gradle clean test -DdeviceHost=browserstack
 ```
