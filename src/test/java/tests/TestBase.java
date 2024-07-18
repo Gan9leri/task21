@@ -2,7 +2,6 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.EmulationConfig;
 import drivers.BrowserstackDriver;
 import drivers.EmulationDriver;
 import drivers.RealDeviceDriver;
@@ -13,12 +12,14 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
+
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
-        Configuration.browser = BrowserstackDriver.class.getName();
+        //Configuration.browser = BrowserstackDriver.class.getName();
+        Configuration.browser = RealDeviceDriver.class.getName();
         if ("browserstack".equals(System.getProperty("deviceHost"))) {
             Configuration.browser = BrowserstackDriver.class.getName();
         }

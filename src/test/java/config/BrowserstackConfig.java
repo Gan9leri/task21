@@ -8,7 +8,6 @@ import org.aeonbits.owner.Config;
 
 public interface BrowserstackConfig extends Config {
 
-
     @DefaultValue("http://hub.browserstack.com/wd/hub")
     String remoteUrl();
 
@@ -35,6 +34,5 @@ public interface BrowserstackConfig extends Config {
 
     @DefaultValue("RU")
     String mobileLocale();
-
 
 }
