@@ -88,21 +88,21 @@ adb devices
 ### Запуск тестов: 
 a) Для запуска тесто по умолчанию используем команду:
 ```shell
-gradlew clean test
+gradle clean test
 ```
 в этом случае дефолтное значение deviceHost=browserstack
 
 b) Для запуска тестов на реальном устройстве используем команду:
 ```shell
-gradlew clean test -DdeviceHost=real
+gradle clean test -DdeviceHost=real
 ```
 
 c) Для запуска тестов на виртуальном устройстве используем команду:
 ```shell
-gradlew clean test -DdeviceHost=emulation
+gradle clean test -DdeviceHost=emulation
 ```
 
 d) Для запуска тестов удаленно на BrowserStack используем команду:
 ```shell
-gradlew clean test -DdeviceHost=browserstack
+gradle clean test -DdeviceHost=browserstack
 ```
